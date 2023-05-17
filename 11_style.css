@@ -1,0 +1,413 @@
+/* Author: Jo Jung
+Date: Day Month Year
+Version: Week 11
+*/
+
+/*
+COLOURS
+#211d1c - dark brown (for text)
+#2f261d - brown
+#225c71 - dark teal
+#c62d03 - burnt red
+#ffffff - white
+#eee9d9 - beige
+*/
+
+/*GLOBAL SETTING
+----------------------------------------
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,700;1,300;1,700&display=swap');
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	font-size: 16px;
+	font-weight: 300;
+	font-family: 'Open Sans', sans-serif;
+	color: #211d1c;
+	margin: 0;
+}
+
+#wrapper {
+	position: relative;
+    /* ==== Solution: Activity 2 Step 3*/
+	max-width: 1200px; 
+    /* ==== Solution: Activity 2 Step 6*/
+    width: 90%;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 3em;
+	font-weight: 700;
+}
+
+h2 {
+	font-size: 1.6em;
+	font-weight: 700;
+}
+
+a {
+	color: #225c71; /* dark teal */
+}
+
+a:visited {
+	color: #c62d03; /* burnt red */
+}
+
+/* === SOLUTION FOR ACTIVITY #5 STEP 4  === */
+.clearfix::after {
+	content:"";
+    display: block;
+    clear: both;
+}
+
+
+
+/* HEADER
+----------------------------------------
+*/
+header {
+/* ==== Solution: Activity 3 Steps 4 - 5, and Step 8*/
+	background: #2f261d	url(images/banner_1200.jpg) no-repeat top center/cover;
+	height: 430px;
+	color: #ffffff;	
+}
+	
+header h1 {
+	visibility: hidden;
+}
+
+header img {
+	position: relative;
+	top: 20px; left: 20px;
+	z-index: 999;
+}
+
+/* NAVIGATION
+----------------------------------------
+*/
+nav {
+	background-color: rgba(0,0,0,0.65);
+	position: absolute;
+	top: 0px; left: 0px;
+	width: 100%; /* = 1200px */
+	padding-top: 45px;
+
+}
+
+nav a {
+	color: #ffffff; /* white */
+	text-decoration: none;
+	padding: 10px 20px 15px 20px;
+}
+nav a:hover {
+	background-color: #356d81;
+}
+
+nav a:visited {
+	color: #ffffff;
+}
+
+nav ul {
+	padding-left: 200px;
+	list-style: none;
+}
+
+nav li {
+	display: inline;
+}
+
+nav span {
+    padding: 10px 20px 15px 20px;
+	background-color: #356d81;
+    color: #ffffff;
+}
+
+
+/* CONTENT 1
+----------------------------------------
+*/
+
+#three-columns {
+    margin: 30px 0;
+}
+
+#three-columns section {
+	float: left;
+	width: 33.3%;
+	text-align: center;
+    padding: 15px;
+}
+
+
+/* CONTENT 2
+----------------------------------------
+*/
+#community {
+	background: #4389a2;
+	color: #ffffff;
+}
+
+#community div {
+    float: left;
+    width: 40%;
+    padding: 25px;
+}
+
+#community div:nth-child(2) {
+	width: 60%;
+}
+
+/* ==== Solution: Activity 4 Step 5*/
+#community img {
+	width: 100%; height: auto;
+}
+
+#community a {
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 1.2em;
+	border: 1px solid #ffffff;
+	padding: 4px 15px;
+}
+
+
+/* SIDEBAR
+----------------------------------------
+*/
+
+/* === SOLUTION FOR ACTIVITY #3, STEPS 1 - 6 === */
+
+aside {
+    display: flex;
+    flex-direction: row;
+	flex-wrap: nowrap;
+    background-color: #eee9d9;
+}
+
+/* === SOLUTION FOR ACTIVITY #3, STEP 12 === */
+aside section {
+	padding: 25px;/*the value of paddings added to the Green Community <article> */
+}
+
+/* === SOLUTION FOR ACTIVITY #3, STEP 8 === */
+aside h2 {
+	font-size: 1.2em;
+}
+
+/* === SOLUTION FOR ACTIVITY #3, STEP 9 === */
+aside img {
+	width: 70%; height: auto;/* You will need to try different width values to get the dimensions you want to achieve */
+}
+
+
+/* SIDEBAR - Blockquote
+----------------------------------------
+*/
+/* === SOLUTION FOR ACTIVITY #4, STEP 2 === */
+blockquote {
+	background: #ffffff;
+    /* === SOLUTION FOR ACTIVITY #4, STEP 11 === */
+	margin-bottom: 0;
+    /* === SOLUTION FOR ACTIVITY #4, STEP 14 === */
+	align-self: flex-end;
+    /* === SOLUTION FOR ACTIVITY #4, STEP 17 === */
+	padding: 30px 25px 25px 25px; /* top, right, bottom and right - clockwise */
+}
+
+
+/* === SOLUTION FOR CHALLENGE ACTIVITY === */
+/* FOOTER
+----------------------------------------
+*/
+footer {
+	font-size: 0.8em;
+}
+
+footer ul {
+	display: flex;
+	
+	/*	Designer preference: I could have used the "space-around" and avoid using the padding-right added in the footer li. But I didn't like the space created by the "space-around" alignment. */
+	justify-content: center;
+}
+
+footer li {
+	list-style: none;
+	padding-right: 20px;
+}
+
+
+/* MEDIA QUERIES
+----------------------------------------
+/* === SOLUTION FOR ACTIVITY 7, STEP 3 ====*/
+@media (max-width: 1000px) {
+    /* === SOLUTION FOR ACTIVITY 7, STEPS 6 - 7 */
+	/*	wrapper*/
+	#wrapper {
+		width: 100%;
+	}
+    
+    /* === SOLUTION FOR ACTIVITY 7, STEPS 4 - 5*/
+	#community h2 {
+		margin: 0;
+	}
+    
+    /* === SOLUTION FOR ACTIVITY 7, STEPS 10 - 11*/
+	footer {
+		font-size: 0.7em;
+	}
+}
+
+/* === SOLUTION FOR ACTIVITY 8, STEP 2 ====*/
+@media (max-width: 800px) {
+    /* === SOLUTION FOR ACTIVITY 8, STEPS 3 - 5*/
+	header {
+		background: url(images/banner_800.png) no-repeat top center/cover;
+        height: 290px;
+	}
+    
+    /* === SOLUTION FOR ACTIVITY 8, STEPS 8 - 10*/
+	header img {
+		width: 20%; height: auto; 
+	}
+    
+	/* === SOLUTION FOR ACTIVITY 8, STEPS 13 - 14*/
+	nav { padding-top: 70px; } /* How did I know what value to add? Estimate and trial-and-error */
+    
+    /* === SOLUTION FOR ACTIVITY 8, STEPS 15 - 16*/
+	nav ul { padding-left: 5px; }
+    
+    /* === SOLUTION FOR ACTIVITY 8, STEPS 19 - 20*/
+	#three-columns section {
+		float: none;
+		width: 100%;
+		text-align: left;
+	}
+    
+    /* === SOLUTION FOR ACTIVITY 8, STEPS 23 - 24*/
+	#three-columns img {
+		float: left;
+		margin: 30px 20px;
+	}
+    
+    /* === SOLUTION FOR ACTIVITY 8, STEPS 27 - 28*/
+	blockquote {font-size: 0.8em;}
+    
+    /* === SOLUTION FOR ACTIVITY 8, STEPS 29 - 30*/
+	footer ul {
+		flex-wrap: wrap;
+	}
+	
+	/* === SOLUTION FOR ACTIVITY 8, STEP 34*/
+	footer li {
+		padding-bottom: 10px;
+	}
+    
+}
+
+
+
+@media (max-width: 600px) {
+/* === SOLUTION FOR CHALLENGE ACTIVITY, STEP 1 ====*/
+/*	======================== FONT SIZES - START ====================== */
+	/*	reduce the font sizes for h2, p, and blockquote */
+	h2, aside h2, p 	{ font-size: 1em; }
+	p 					{ font-size: 0.9em; }
+	nav, #community a 	{ font-size: 0.8em; }
+	blockquote 			{ font-size: 0.7em; }
+/*	======================== FONT SIZES - END ====================== */
+	
+	/* === SOLUTION FOR CHALLENGE ACTIVITY, STEPS 2 - 3 ====*/
+	/*	remove the background image and set the original background colour. Also shorten the height */
+	header {
+		height: 120px;
+		background-image: none;
+		background-color: #2f261d; /* dark brown - scroll up to see the CODE LINE 81 */
+	}
+	
+	/* === SOLUTION FOR CHALLENGE ACTIVITY, STEP 4 ====*/
+	/* set the width of the logo with a pixel value to stop it from scaling down further - readability. In the previous media query, the logo graphic was set to be responsive and we are stopping it from scale responding to the viewport size as we don't want the logo to be too small - scroll up to see the CODE LINE 267 */
+	header img {
+		width: 120px; height: auto;
+	}
+	
+	/* === SOLUTION FOR CHALLENGE ACTIVITY, STEP 2 ====*/
+	/* The nav background colour was opaque black overlaying on top of the header which previously had a backgorund image. Now that we don't have the background image, we no longer need the opaque black - set the background colour of the nav to match the dark brown header BG colour */
+	nav {
+		background-color: #2f261d;
+	}
+	
+	/* === SOLUTION FOR CHALLENGE ACTIVITY, STEP 5 ====*/
+	/* The original link padding:10px 20px 15px 20px spread the links too far apart in smaller screens. Reduced the paddings to fit the links on small screens - scroll up to see the CODE LINE 108*/
+	nav a {
+		padding: 10px;
+	}
+	
+	/* === SOLUTION FOR CHALLENGE ACTIVITY, STEP 6 ====*/
+	/* removed the icon graphics to make more space for the text */
+	#three-columns img{
+		display: none;
+	}
+	
+	/* === SOLUTION FOR CHALLENGE ACTIVITY, STEP 7 ====*/
+	/* removed the top and bottom paddings so that the 3 blocks of the content stack closely - scroll up to see the CODE LIN 133. But we still want left and right paddings for readability - otherwise, the text will be displayed edge to edge */
+	.threeColumns section {
+		padding: 0 30px;
+	}
+	
+	/* === SOLUTION FOR CHALLENGE ACTIVITY, STEP 8 ====*/
+	/* removed the float from the Content 2 (Green Community) area so that the image and the text can be displayed on a separate line. The image and the text occupied 40% and 60% - set to 100% so each will occupy the entire horizontal space available - scroll up to see the CODE LINES 153 and 159*/
+	#community div, #community div:nth-child(2) {
+		float: none;
+		width: 100%;
+	}
+	
+	/* === SOLUTION FOR CHALLENGE ACTIVITY, STEP 9 ====*/
+	/*	the image and the text originally had 25px margins top and bottom to add space between the Content 1 and Content 2 areas. As the image and the text are now on sperate lines, paddings are combined to create 50px - paddings do not collapse like margins. Removed only the padding-top of the text area to reduce the amount of gap but not to remove completely - scroll up to see the CODE LINE 156*/
+	#community div:nth-child(2) {
+		padding-top: 0;
+	}
+	
+	/* === SOLUTION FOR CHALLENGE ACTIVITY, STEP 10 ====*/
+	/* The aside area is set to display side-by-side using the flexbox - default is no wrap hence the side-by-side display. Overide the default no-wrap to wrap so that the elements can be on their own seperate lines when there is not enough space for them to display side-by-side. */
+	aside {
+		flex-wrap: wrap;
+	}
+	
+	/* === SOLUTION FOR CHALLENGE ACTIVITY, STEP 11 ====*/
+	/*	In the original CSS styles for the blockquote, top paddiong of 30px was added to push down the blockquote text within the parent-container boudary - scroll up to see the CODE LINE 205. The top padding is now descreased to fit better for smaller screen layouts */
+	blockquote {
+		padding-top: 10px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
